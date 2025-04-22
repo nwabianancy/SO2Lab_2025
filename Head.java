@@ -4,31 +4,30 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Head {
-	private int width, height;
-	private int x, y;
-	private Eye eye;
-	private mouth mouth;
-	
-	 public Head(int x, int y, int width, int height) {
-			this.x = x;
-	        this.y = y;
-	        this.width = width;
-	        this.height = height;
-	}
+    private int size;
+  
+    public Head(int size) {
+        this.size = size;
+    }
 
+    public void drawAt(int left, int bottom) {
+        int halfTheSize = size/2;
+        int x = left - halfTheSize; 
+        int y = bottom + halfTheSize;
+        Drawing.pen.setColor(Color.decode("#ff88d5"));
+        Drawing.pen.fillOval(x, y, size, size); 
+        Drawing.pen.setColor(Color.black);
+        Drawing.pen.drawOval(x, y, size, size);
+		//mouth.drawAt();
+		//eye.drawAt();
+    }
 
-	/*
-	 * public void drawAt(int left, int bottom) { int x = left; int y = bottom -
-	 * height; Drawing.pen.fillOval(x, y, width, width); }
-	 */
+  
+    public int getSize() {
+      return size; 
+    }
 
-
-	 public void draw(Graphics pen) {
-		 pen.setColor(Color.decode("#f7abe9"));
-		 pen.fillOval(x, y, width, height);
-		 mouth.drawAt();
-		 eye.drawAt();
+		 
 		
 	 }
-	   }
-
+	   
