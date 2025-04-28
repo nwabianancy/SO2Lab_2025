@@ -1,23 +1,27 @@
 package drawingTool;
 
-import java.awt.Color;
+//import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
 public class DrawingArea extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private Dragonfly myDragonfly;
+	private Dragonfly newDragonfly;
 	
 	public DrawingArea() {
-        myDragonfly = new Dragonfly(550, 185, 100, 100);
+        myDragonfly = new Dragonfly(59);
+        newDragonfly = new Dragonfly(80);
     }
 	
+
 	protected void paintComponent(Graphics pen) {
 		super.paintComponent(pen);
+		Drawing.set(pen);
 		
-		
-		myDragonfly.draw(pen);
-		
+		myDragonfly.draw(300,600);
+		newDragonfly.draw(1000,600);
+	
 		
 		/*
 		 * pen.drawLine(100, 100, 800, 800);
